@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: redis
+    port: 6379
+    timeout: 5000ms
+
+hive:
+  jdbc-url: jdbc:hive2://spark-master:10000/default
+  username: hive
+  password: hive
+
+ranking:
+  formula:
+    ctr-weight: 0.4
+    cvr-weight: 0.3
+    repurchase-weight: 0.3

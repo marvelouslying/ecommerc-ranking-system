@@ -1,0 +1,4 @@
+# 主要用于Spring Cloud配置，本项目可不配置
+spring:
+  application:
+    name: ranking-service

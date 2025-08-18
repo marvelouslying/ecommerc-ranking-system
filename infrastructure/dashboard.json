@@ -1,0 +1,49 @@
+{
+  "dashboard": {
+    "title": "Ecommerce Ranking Dashboard",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Flink 处理吞吐量",
+        "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+        "targets": [
+          {
+            "expr": "sum(flink_taskmanager_job_task_numRecordsIn)",
+            "legendFormat": "记录输入量"
+          },
+          {
+            "expr": "sum(flink_taskmanager_job_task_numRecordsOut)",
+            "legendFormat": "记录输出量"
+          }
+        ]
+      },
+      {
+        "type": "singlestat",
+        "title": "实时处理延迟",
+        "gridPos": {"x": 12, "y": 0, "w": 6, "h": 4},
+        "targets": [
+          {
+            "expr": "avg(flink_taskmanager_job_latency_source_id=~'.*' and source_subtask_index=0)",
+            "format": "ms"
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": "TOP10 商品排名",
+        "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8},
+        "columns": [
+          {"text": "商品ID", "type": "string"},
+          {"text": "评分", "type": "number"}
+        ],
+        "datasource": "ranking-service",
+        "targets": [
+          {
+            "expr": "topk(10, ranking_score)",
+            "format": "table"
+          }
+        ]
+      }
+    ]
+  }
+}

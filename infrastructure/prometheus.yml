@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'flink-metrics'
+    static_configs:
+      - targets: ['flink-jobmanager:9249'] # Flink指标端口
+
+  - job_name: 'spark-metrics'
+    static_configs:
+      - targets: ['spark-master:4040'] # Spark指标端口
+
+  - job_name: 'ranking-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['ranking-service:8080']
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka:7071'] # Kafka JMX端口
