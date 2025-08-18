@@ -1,14 +1,6 @@
 # ecommerc-ranking-system
 基于Spark和Flink的电商排名项目
 
-# 
-
-
-
-
-
-
-
 ## 验证成果
 
 ### 测试数据集
