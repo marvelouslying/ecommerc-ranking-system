@@ -2,64 +2,65 @@
 基于Spark和Flink的电商排名项目
 
 ## 项目架构
-ecommerce-ranking-system/
+ecommerce-ranking-system\
 ├── pom.xml (父POM)
-├── real-time-processor/
+├── real-time-processor\
 │   ├── pom.xml
-│   └── src/
-│       ├── main/
-│       │   ├── java/
-│       │   │   └── com/ecommerce/ranking/
+│   └── src\
+│       ├── main\
+│       │   ├── java\
+│       │   │   └── com\ecommerce\ranking\
 │       │   │       ├── RealtimeProcessor.java
 │       │   │       ├── ProductMetrics.java
 │       │   │       ├── UserBehavior.java
-│       │   │       └── aggregation/
+│       │   │       └── aggregation\
 │       │   │           ├── ProductAggregator.java
 │       │   │           └── RedisSink.java
-│       │   └── resources/
+│       │   └── resources\
 │       │       └── application.conf
-│       └── test/
-├── batch-processor/
+│       └── test\
+├── batch-processor\
 │   ├── pom.xml
-│   └── src/
-│       ├── main/
-│       │   ├── scala/
-│       │   │   └── com/ecommerce/ranking/
+│   └── src\
+│       ├── main\
+│       │   ├── scala\
+│       │   │   └── com\ecommerce\ranking\
 │       │   │       ├── BatchProcessor.scala
-│       │   │       └── models/
+│       │   │       └── models\
 │       │   │           └── HistoricalMetrics.scala
-│       │   └── resources/
+│       │   └── resources\
 │       │       └── application.conf
-│       └── test/
-├── ranking-service/
+│       └── test\
+├── ranking-service\
 │   ├── pom.xml
-│   └── src/
-│       ├── main/
-│       │   ├── java/
-│       │   │   └── com/ecommerce/ranking/
+│   └── src\
+│       ├── main\
+│       │   ├── java\
+│       │   │   └── com\ecommerce\ranking\
 │       │   │       ├── RankingApplication.java
-│       │   │       ├── controller/
+│       │   │       ├── controller\
 │       │   │       │   └── RankingController.java
-│       │   │       ├── service/
+│       │   │       ├── service\
 │       │   │       │   ├── RankingService.java
 │       │   │       │   └── RedisService.java
-│       │   │       └── model/
+│       │   │       └── model\
 │       │   │           └── ProductRank.java
-│       │   └── resources/
+│       │   └── resources\
 │       │       ├── application.yml
 │       │       └── bootstrap.yml
-│       └── test/
-├── data-generator/
+│       └── test\
+├── data-generator\
 │   ├── generator.py
 │   ├── requirements.txt
 │   └── Dockerfile
-├── validation/
+├── validation\
 │   ├── validation.py
 │   └── Result_Analysis.ipynb
-├── infrastructure/
+├── infrastructure\
 │   ├── prometheus.yml
 │   └── dashboard.json
 └── docker-compose.yml
+
 
 ## 验证成果
 
