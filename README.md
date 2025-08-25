@@ -1,6 +1,66 @@
 # ecommerc-ranking-system
 基于Spark和Flink的电商排名项目
 
+## 项目架构
+ecommerce-ranking-system/
+├── pom.xml (父POM)
+├── real-time-processor/
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/
+│       │   │   └── com/ecommerce/ranking/
+│       │   │       ├── RealtimeProcessor.java
+│       │   │       ├── ProductMetrics.java
+│       │   │       ├── UserBehavior.java
+│       │   │       └── aggregation/
+│       │   │           ├── ProductAggregator.java
+│       │   │           └── RedisSink.java
+│       │   └── resources/
+│       │       └── application.conf
+│       └── test/
+├── batch-processor/
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── scala/
+│       │   │   └── com/ecommerce/ranking/
+│       │   │       ├── BatchProcessor.scala
+│       │   │       └── models/
+│       │   │           └── HistoricalMetrics.scala
+│       │   └── resources/
+│       │       └── application.conf
+│       └── test/
+├── ranking-service/
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/
+│       │   │   └── com/ecommerce/ranking/
+│       │   │       ├── RankingApplication.java
+│       │   │       ├── controller/
+│       │   │       │   └── RankingController.java
+│       │   │       ├── service/
+│       │   │       │   ├── RankingService.java
+│       │   │       │   └── RedisService.java
+│       │   │       └── model/
+│       │   │           └── ProductRank.java
+│       │   └── resources/
+│       │       ├── application.yml
+│       │       └── bootstrap.yml
+│       └── test/
+├── data-generator/
+│   ├── generator.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── validation/
+│   ├── validation.py
+│   └── Result_Analysis.ipynb
+├── infrastructure/
+│   ├── prometheus.yml
+│   └── dashboard.json
+└── docker-compose.yml
+
 ## 验证成果
 
 ### 测试数据集
